@@ -32,7 +32,7 @@ DJANGO_SUPERUSER_EMAIL = <superuser_email>
 
 Project is docker-compose ready to run it type:
 ```
-docker-compose up
+$ docker-compose up
 ```
 Server will be running on http://localhost:8000/
 
@@ -54,7 +54,7 @@ Makemigrations and migrate:
 (env)$ python manage.py makemigrations
 (env)$ python manage.py migrate
 ```
-If DJANGO_SUPERUSER_USERNAME and DJANGO_SUPERUSER_PASSWORD was set in env file you can create superuser by using:
+If DJANGO_SUPERUSER_USERNAME and DJANGO_SUPERUSER_PASSWORD was set in .env file you can create superuser by using:
 ```
 (env)$ python manage.py shell < "utils/create_superuser.py"
 ```
