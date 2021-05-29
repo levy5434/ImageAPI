@@ -5,6 +5,8 @@ Application lets users upload their JPG or PNG image files to Cloudinary cloud a
 
 ## Table of contents
 * [Technologies](#technologies)
+* [Initialize .env](#initialize)
+* [Docker-compose](#docker-compose)
 * [Setup](#setup)
 
 ## Technologies
@@ -12,17 +14,31 @@ Application lets users upload their JPG or PNG image files to Cloudinary cloud a
 * Django version: 3.2.3
 * DRF version: 3.12.4
 
-## Setup
+## Initialize
 
-Create .env file in project's base folder with application secret key and cloudinary authentication.
+Create .env file with enviromental variables in project's base folder with application secret key, cloudinary authentication and superuser credentials:
 ```
 SECRET_KEY = <project_secret_key>
 CLOUD_NAME = <cloudinary_cloud_name>
 API_KEY = <cloudinary_api_key>
 API_SECRET = <cloudinary_api_secret>
+
+DJANGO_SUPERUSER_USERNAME = <superuser_username>
+DJANGO_SUPERUSER_PASSWORD = <superuser_password>
+DJANGO_SUPERUSER_EMAIL = <superuser_email>
 ```
 
-Create and run an isolated environment
+## Docker-compose
+
+Project is docker-compose ready to run it type:
+```
+docker-compose up
+```
+Server will be running on http://localhost:8000/
+
+## Setup
+
+Create and run an isolated environment:
 ```
 $ python -m venv env
 $ source env/bin/activate
@@ -33,14 +49,22 @@ Install the dependencies:
 (env)$ pip install -r requirements.txt
 ```
 
-Migrate and create superuser
+Makemigrations and migrate:
 ```
 (env)$ python manage.py makemigrations
 (env)$ python manage.py migrate
+```
+If DJANGO_SUPERUSER_USERNAME and DJANGO_SUPERUSER_PASSWORD was set in env file you can create superuser by using:
+```
+(env)$ python manage.py shell < "utils/create_superuser.py"
+```
+
+Or:
+```
 (env)$ python manage.py createsuperuser
 ```
 
-Run the server
+To run the server:
 ```
 (env)$ python manage.py runserver
 ```
