@@ -30,11 +30,16 @@ DJANGO_SUPERUSER_EMAIL = <superuser_email>
 
 ## Docker-compose
 
-Project is docker-compose ready to run it type:
+Project is docker-compose ready.<br />
+To run it add file permission to execute the docker-entrypoint.sh:
+```
+$ chmod 775 docker-entrypoint.sh
+```
+Run the project with:
 ```
 $ docker-compose up
 ```
-Server will be running on http://localhost:8000/
+Server will be running on port 8000.
 
 ## Setup
 
