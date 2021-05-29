@@ -164,7 +164,7 @@ class ImageLinkSerializer(serializers.ModelSerializer):
             expiring_link = ExpiringLink.objects.get(url=ret["url"])
             expiring_link_url = (
                 self.context["request"].build_absolute_uri("/")[:-1]
-                + expiring_link.get_url()
+                + expiring_link.get_url()  # noqa
             )
             extra_ret = {"Expiring link": expiring_link_url}
             ret.update(extra_ret)

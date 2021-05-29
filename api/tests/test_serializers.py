@@ -86,7 +86,8 @@ class TestImageLinkSerializer:
                 name = CharField(max_length=256, validators=[<UniqueValidator(queryset=Image.objects.all())>])
                 url = URLField(read_only=True)
                 image = ImageField(allow_empty_file=False, validators=[<django.core.validators.FileExtensionValidator object>], write_only=True)
-                link_expiry_time = IntegerField(required=False, validators=[<django.core.validators.MaxValueValidator object>, <django.core.validators.MinValueValidator object>], write_only=True) 
+                link_expiry_time = IntegerField(required=False, validators=[<django.core.validators.MaxValueValidator object>, <django.core.validators.MinValueValidator object>], write_only=True)
             """
         )
+        print(repr(ImageLinkSerializer()))
         assert repr(ImageLinkSerializer()) == expected

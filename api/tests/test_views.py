@@ -86,7 +86,7 @@ class TestImageViewSet:
         response = self.client.get(url)
         assert (
             response.data["detail"]
-            == "Authentication credentials were not provided."
+            == "Authentication credentials were not provided."  # noqa
         )
         assert response.status_code == 403
 
