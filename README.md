@@ -1,7 +1,14 @@
 # ImageAPI
 
-Application lets users upload their JPG or PNG image files to Cloudinary cloud and stores urls to them. You can create account tiers with permissions which allows users to upload original size images or thumbnails, which size can be set via administration panel. Another ability which can be set to an account tier is fetching expiring link to an image which can last from 300 seconds to 30000 seconds. Users can use POST request to send images and GET request  to retrieve urls to all of theirs uploaded files or get a single image url.
+Application lets users upload their JPG or PNG image files to Cloudinary cloud and stores urls to them. You can create account tiers with permissions which allows users to upload original size images or thumbnails, which size can be set via administration panel. Another ability which can be set to an account tier is fetching expiring link to an image which can last from 300 seconds to 30000 seconds. Users can use POST request to send images and GET request to retrieve urls to all of theirs uploaded files or get a single image url.
 
+Live version: http://facultyimageapi.azurewebsites.net/api/
+
+Users logins to test with different account tiers:\
+`basic` - thumbnails 200px\
+`premium` - original size and thumbnails 200px, 400px\
+`enterprise` - original size, thumbnails 200px, 400px and fetching expiring link\
+Password to these accounts: `testuser` 
 
 ## Table of contents
 * [Technologies](#technologies)
